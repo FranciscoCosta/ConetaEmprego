@@ -15,20 +15,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('jobs',[
+        'heading'=> 'Vagas recentes',
+        'jobs'=> [
+
+        ]
+    ]);
 });
 
 // Route::get('test', function() {
 //     echo 'Hello World ' ;
 // });
 
-Route::get('test/{id}', function($id) {
-    // dd($id);
-    // ddd($id);
-    echo 'Hello World ' . $id;
-})->where('id', '[0-9]+');
+// Route::get('test/{id}', function($id) {
+//     // dd($id);
+//     // ddd($id);
+//     echo 'Hello World ' . $id;
+// })->where('id', '[0-9]+');
 
 
-Route::get('/test', function(Request $request) {
-    dd($request->name);
-});
+// Route::get('/test', function(Request $request) {
+//     dd($request->name);
+// });
