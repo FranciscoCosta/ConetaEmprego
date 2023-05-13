@@ -14,7 +14,7 @@ use App\Models\Job;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Retorna todos os jobs
+// Retorna todos os jobs    
 Route::get('/', function () {
     return view('jobs',[
         'heading'=> 'Vagas recentes',
