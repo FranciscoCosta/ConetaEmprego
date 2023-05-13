@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// Retorna todos os jobs
 Route::get('/', function () {
     return view('jobs',[
         'heading'=> 'Vagas recentes',
-        'jobs'=> [
-
-        ]
+        'jobs'=> Job::all()
+    ]);
+});
+// Retorna job por id
+Route::get('/jobs/{id}', function ($id) {
+    return view('job',[
+        'job'=> Job::find($id)
     ]);
 });
 
